@@ -1,0 +1,20 @@
+<mat-form-field [formGroup]="range">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [min]="min" [max]="max" [dateFilter]="myFilter"  [rangePicker]="picker">
+    <input matStartDate matInput formControlName="start" placeholder="Start date">
+    <input matEndDate matInput formControlName="end" placeholder="End date">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker ></mat-date-range-picker>
+</mat-form-field>
+<br>
+start:
+{{range.controls.start.errors | json}}
+<br>
+end:
+{{range.controls.end.errors | json}}
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
